@@ -1,0 +1,724 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Thoeurn Hean - Senior IT Specialist & Graphic Designer</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&family=Kantumruy+Pro:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <style>
+        :root {
+            --bg-main: #0a0f1d;
+            --bg-card: #111827;
+            --bg-card-hover: #1f2937;
+            --primary: #3b82f6;
+            --primary-glow: rgba(59, 130, 246, 0.25);
+            --accent: #06b6d4;
+            --text-main: #f3f4f6;
+            --text-muted: #9ca3af;
+            --border-color: #1f2937;
+            --border-highlight: #374151;
+            --success: #10b981;
+        }
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: 'Inter', 'Kantumruy Pro', sans-serif;
+            scroll-behavior: smooth;
+        }
+
+        body {
+            background-color: var(--bg-main);
+            color: var(--text-main);
+            line-height: 1.6;
+            overflow-x: hidden;
+        }
+
+        /* Container */
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 24px;
+        }
+
+        /* Navigation */
+        nav {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            background: rgba(10, 15, 29, 0.85);
+            backdrop-filter: blur(12px);
+            z-index: 1000;
+            border-bottom: 1px solid var(--border-color);
+        }
+
+        .nav-container {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            height: 70px;
+        }
+
+        .logo {
+            font-size: 1.4rem;
+            font-weight: 800;
+            color: #fff;
+            text-decoration: none;
+            letter-spacing: -0.5px;
+        }
+
+        .logo span {
+            color: var(--primary);
+        }
+
+        .nav-links {
+            display: flex;
+            gap: 28px;
+            list-style: none;
+        }
+
+        .nav-links a {
+            color: var(--text-muted);
+            text-decoration: none;
+            font-size: 0.95rem;
+            font-weight: 500;
+            transition: color 0.3s ease;
+        }
+
+        .nav-links a:hover {
+            color: var(--primary);
+        }
+
+        .btn-hire {
+            background: linear-gradient(135deg, var(--primary), var(--accent));
+            color: #fff;
+            padding: 9px 20px;
+            border-radius: 8px;
+            text-decoration: none;
+            font-weight: 600;
+            font-size: 0.9rem;
+            box-shadow: 0 4px 14px var(--primary-glow);
+            transition: transform 0.2s ease, box-shadow 0.2s ease;
+        }
+
+        .btn-hire:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 6px 20px var(--primary-glow);
+        }
+
+        /* Hero Section */
+        .hero {
+            padding: 160px 0 100px;
+            display: grid;
+            grid-template-columns: 1.2fr 0.8fr;
+            gap: 40px;
+            align-items: center;
+        }
+
+        .hero-badge {
+            display: inline-flex;
+            align-items: center;
+            gap: 8px;
+            background: rgba(59, 130, 246, 0.1);
+            border: 1px solid rgba(59, 130, 246, 0.3);
+            color: var(--primary);
+            padding: 6px 14px;
+            border-radius: 20px;
+            font-size: 0.85rem;
+            font-weight: 600;
+            margin-bottom: 20px;
+        }
+
+        .hero-badge .dot {
+            width: 8px;
+            height: 8px;
+            background-color: var(--success);
+            border-radius: 50%;
+            box-shadow: 0 0 8px var(--success);
+        }
+
+        .hero-title {
+            font-size: 3.2rem;
+            font-weight: 800;
+            line-height: 1.15;
+            margin-bottom: 20px;
+            letter-spacing: -1px;
+        }
+
+        .gradient-text {
+            background: linear-gradient(135deg, #60a5fa, #22d3ee);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+        }
+
+        .hero-description {
+            font-size: 1.1rem;
+            color: var(--text-muted);
+            margin-bottom: 32px;
+            max-width: 580px;
+        }
+
+        .hero-actions {
+            display: flex;
+            gap: 16px;
+            align-items: center;
+        }
+
+        .btn-secondary {
+            border: 1px solid var(--border-highlight);
+            background: var(--bg-card);
+            color: var(--text-main);
+            padding: 12px 24px;
+            border-radius: 8px;
+            text-decoration: none;
+            font-weight: 600;
+            transition: background 0.3s ease, border-color 0.3s ease;
+        }
+
+        .btn-secondary:hover {
+            background: var(--bg-card-hover);
+            border-color: var(--primary);
+        }
+
+        .hero-card {
+            background: var(--bg-card);
+            border: 1px solid var(--border-color);
+            border-radius: 16px;
+            padding: 32px;
+            box-shadow: 0 20px 40px rgba(0,0,0,0.4);
+            position: relative;
+        }
+
+        .profile-header {
+            display: flex;
+            align-items: center;
+            gap: 16px;
+            margin-bottom: 24px;
+        }
+
+        .avatar-placeholder {
+            width: 70px;
+            height: 70px;
+            border-radius: 50%;
+            background: linear-gradient(135deg, var(--primary), var(--accent));
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 1.8rem;
+            font-weight: 700;
+            color: #fff;
+        }
+
+        .info-list {
+            display: flex;
+            flex-direction: column;
+            gap: 14px;
+        }
+
+        .info-item {
+            display: flex;
+            align-items: flex-start;
+            gap: 12px;
+            font-size: 0.9rem;
+            color: var(--text-muted);
+        }
+
+        .info-item strong {
+            color: var(--text-main);
+        }
+
+        /* Section Header */
+        .section-header {
+            text-align: center;
+            margin-bottom: 60px;
+        }
+
+        .section-subtitle {
+            color: var(--primary);
+            font-size: 0.9rem;
+            font-weight: 700;
+            text-transform: uppercase;
+            letter-spacing: 1.5px;
+            margin-bottom: 8px;
+        }
+
+        .section-title {
+            font-size: 2.2rem;
+            font-weight: 700;
+            letter-spacing: -0.5px;
+        }
+
+        /* Services / Expertise */
+        .services {
+            padding: 100px 0;
+            background: rgba(17, 24, 39, 0.4);
+            border-top: 1px solid var(--border-color);
+            border-bottom: 1px solid var(--border-color);
+        }
+
+        .grid-3 {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 24px;
+        }
+
+        .service-card {
+            background: var(--bg-card);
+            border: 1px solid var(--border-color);
+            border-radius: 12px;
+            padding: 32px;
+            transition: transform 0.3s ease, border-color 0.3s ease;
+        }
+
+        .service-card:hover {
+            transform: translateY(-5px);
+            border-color: var(--primary);
+        }
+
+        .service-icon {
+            width: 48px;
+            height: 48px;
+            background: rgba(59, 130, 246, 0.1);
+            color: var(--primary);
+            border-radius: 10px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 1.4rem;
+            margin-bottom: 20px;
+        }
+
+        .service-card h3 {
+            font-size: 1.25rem;
+            margin-bottom: 12px;
+            font-weight: 600;
+        }
+
+        .service-card p {
+            color: var(--text-muted);
+            font-size: 0.92rem;
+            line-height: 1.6;
+        }
+
+        /* Skills Section */
+        .skills-section {
+            padding: 100px 0;
+        }
+
+        .skills-grid {
+            display: grid;
+            grid-template-columns: repeat(2, 1fr);
+            gap: 24px;
+        }
+
+        .skill-group {
+            background: var(--bg-card);
+            border: 1px solid var(--border-color);
+            padding: 28px;
+            border-radius: 12px;
+        }
+
+        .skill-group h3 {
+            font-size: 1.1rem;
+            margin-bottom: 20px;
+            color: var(--accent);
+            display: flex;
+            align-items: center;
+            gap: 10px;
+        }
+
+        .tags {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 10px;
+        }
+
+        .tag {
+            background: rgba(31, 41, 55, 0.8);
+            border: 1px solid var(--border-highlight);
+            color: var(--text-main);
+            padding: 8px 14px;
+            border-radius: 6px;
+            font-size: 0.88rem;
+            font-weight: 500;
+        }
+
+        /* Experience Timeline */
+        .experience {
+            padding: 100px 0;
+            background: rgba(17, 24, 39, 0.4);
+            border-top: 1px solid var(--border-color);
+        }
+
+        .timeline {
+            position: relative;
+            max-width: 800px;
+            margin: 0 auto;
+        }
+
+        .timeline::before {
+            content: '';
+            position: absolute;
+            left: 20px;
+            top: 0;
+            bottom: 0;
+            width: 2px;
+            background: var(--border-color);
+        }
+
+        .timeline-item {
+            position: relative;
+            padding-left: 50px;
+            margin-bottom: 40px;
+        }
+
+        .timeline-dot {
+            position: absolute;
+            left: 13px;
+            top: 4px;
+            width: 16px;
+            height: 16px;
+            border-radius: 50%;
+            background: var(--primary);
+            border: 4px solid var(--bg-main);
+        }
+
+        .timeline-content {
+            background: var(--bg-card);
+            border: 1px solid var(--border-color);
+            padding: 24px;
+            border-radius: 12px;
+        }
+
+        .timeline-date {
+            color: var(--accent);
+            font-size: 0.85rem;
+            font-weight: 600;
+            margin-bottom: 6px;
+        }
+
+        .timeline-title {
+            font-size: 1.15rem;
+            font-weight: 700;
+            margin-bottom: 4px;
+        }
+
+        .timeline-company {
+            color: var(--text-muted);
+            font-size: 0.9rem;
+            margin-bottom: 12px;
+        }
+
+        .timeline-details {
+            color: var(--text-muted);
+            font-size: 0.9rem;
+            padding-left: 18px;
+        }
+
+        .timeline-details li {
+            margin-bottom: 6px;
+        }
+
+        /* Contact CTA */
+        .contact {
+            padding: 100px 0;
+            text-align: center;
+        }
+
+        .contact-box {
+            background: linear-gradient(135deg, rgba(59, 130, 246, 0.1), rgba(6, 182, 212, 0.1));
+            border: 1px solid rgba(59, 130, 246, 0.2);
+            border-radius: 20px;
+            padding: 60px 40px;
+            max-width: 800px;
+            margin: 0 auto;
+        }
+
+        .contact-box h2 {
+            font-size: 2.2rem;
+            margin-bottom: 16px;
+        }
+
+        .contact-box p {
+            color: var(--text-muted);
+            margin-bottom: 32px;
+            font-size: 1.05rem;
+        }
+
+        .contact-buttons {
+            display: flex;
+            justify-content: center;
+            gap: 16px;
+            flex-wrap: wrap;
+        }
+
+        /* Footer */
+        footer {
+            border-top: 1px solid var(--border-color);
+            padding: 30px 0;
+            text-align: center;
+            color: var(--text-muted);
+            font-size: 0.88rem;
+        }
+
+        /* Responsive Design */
+        @media (max-width: 900px) {
+            .hero {
+                grid-template-columns: 1fr;
+                padding-top: 120px;
+            }
+            .grid-3, .skills-grid {
+                grid-template-columns: 1fr;
+            }
+            .nav-links {
+                display: none;
+            }
+        }
+    </style>
+</head>
+<body>
+
+    <!-- Navigation -->
+    <nav>
+        <div class="container nav-container">
+            <a href="#" class="logo">Thoeurn<span>Hean</span></a>
+            <ul class="nav-links">
+                <li><a href="#about">អំពីខ្ញុំ</a></li>
+                <li><a href="#services">សេវាកម្ម</a></li>
+                <li><a href="#skills">ជំនាញ</a></li>
+                <li><a href="#experience">បទពិសោធន៍</a></li>
+                <li><a href="#contact">ទំនាក់ទំនង</a></li>
+            </ul>
+            <a href="https://t.me/Bunhean007" target="_blank" class="btn-hire">ជួលខ្ញុំឥឡូវនេះ</a>
+        </div>
+    </nav>
+
+    <!-- Hero Section -->
+    <section class="container hero" id="about">
+        <div>
+            <div class="hero-badge">
+                <span class="dot"></span> ត្រៀមខ្លួនសម្រាប់សេវាកម្ម Freelance
+            </div>
+            <h1 class="hero-title">
+                អ្នកជំនាញ <span class="gradient-text">IT Network & Hardware</span> និង <span class="gradient-text">Graphic Design</span>
+            </h1>
+            <p class="hero-description">
+                ខ្ញុំជា Senior IT Technical Support ដែលមានបទពិសោធន៍ច្រើនឆ្នាំក្នុងការដំឡើង ប្រព័ន្ធបណ្តាញ Network, Mikrotik, CCTV, កុំព្យូទ័រ ព្រមទាំងការរចនា Graphic Design និងថតរូប/កាត់ត វីដេអូ ដើម្បីជួយឱ្យអាជីវកម្មរបស់អ្នកដំណើរការដោយរលូន និងមានទាក់ទាញ។
+            </p>
+            <div class="hero-actions">
+                <a href="#contact" class="btn-hire">ទាក់ទងមកខ្ញុំ</a>
+                <a href="#services" class="btn-secondary">មើលសេវាកម្មទាំងអស់</a>
+            </div>
+        </div>
+
+        <div class="hero-card">
+            <div class="profile-header">
+                <div class="avatar-placeholder">TH</div>
+                <div>
+                    <h3 style="color: #fff; font-size: 1.2rem;">Thoeurn Hean (ធឿន ហៀន)</h3>
+                    <p style="color: var(--accent); font-size: 0.88rem;">Senior IT Specialist & Graphic Designer</p>
+                </div>
+            </div>
+            <div class="info-list">
+                <div class="info-item">
+                    📍 <span><strong>ទីតាំង៖</strong> ក្រុងប៉ោយប៉ែត, ខេត្តបន្ទាយមានជ័យ, កម្ពុជា</span>
+                </div>
+                <div class="info-item">
+                    📞 <span><strong>ទូរស័ព្ទ៖</strong> +855 (0)86 458 599</span>
+                </div>
+                <div class="info-item">
+                    ✉️ <span><strong>អ៊ីមែល៖</strong> Thoeurnhean9@gmail.com</span>
+                </div>
+                <div class="info-item">
+                    ✈️ <span><strong>Telegram៖</strong> @Bunhean007</span>
+                </div>
+                <div class="info-item">
+                    🎓 <span><strong>បរិញ្ញាបត្រ៖</strong> បច្ចេកវិទ្យាព័ត៌មានវិទ្យា (IT)</span>
+                </div>
+                <div class="info-item">
+                    🌐 <span><strong>ភាសា៖</strong> ខ្មែរ (មេ) | អង់គ្លេស (ស្ទាត់ជំនាញ)</span>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Services Section -->
+    <section class="services" id="services">
+        <div class="container">
+            <div class="section-header">
+                <p class="section-subtitle">សេវាកម្ម freelance</p>
+                <h2 class="section-title">ដំណោះស្រាយ IT និង Design សម្រាប់អាជីវកម្ម</h2>
+            </div>
+            <div class="grid-3">
+                <div class="service-card">
+                    <div class="service-icon">🌐</div>
+                    <h3>Network & Server setup</h3>
+                    <p>ដំឡើង និងកំណត់ Configuration ឧបករណ៍ Network ដូចជា Mikrotik, Router, Wi-Fi, Switch, Ruijie, UniFi សម្រាប់ក្រុមហ៊ុន សាលារៀន និងអាជីវកម្មផ្សេងៗ។</p>
+                </div>
+                <div class="service-card">
+                    <div class="service-icon">💻</div>
+                    <h3>IT Support & Maintenance</h3>
+                    <p>ដោះស្រាយបញ្ហា Hardware & Software, ដំឡើងប្រព័ន្ធ Security, Backup ទិន្នន័យ, ជួសជុល និងថែទាំប្រព័ន្ធកុំព្យូទ័រ ព្រមទាំង Printer & Scanner។</p>
+                </div>
+                <div class="service-card">
+                    <div class="service-icon">🎥</div>
+                    <h3>CCTV Installation & Control</h3>
+                    <p>សេវាកម្មដំឡើង និងរៀបចំប្រព័ន្ធកាមេរ៉ាសុវត្ថិភាព (CCTV) សម្រាប់ត្រួតពិនិត្យសុវត្ថិភាព អាចមើលតាមរយៈទូរស័ព្ទដៃ និងកុំព្យូទ័របាន។</p>
+                </div>
+                <div class="service-card">
+                    <div class="service-icon">🎨</div>
+                    <h3>Graphic Design & Branding</h3>
+                    <p>រចនា Poster, Banner, ឡូហ្គោ, ខិតប័ណ្ណផ្សព្វផ្សាយ, បដាពាណិជ្ជកម្មសម្រាប់ Social Media (Photoshop & Publisher) ប្រកបដោយភាពច្នៃប្រឌិត។</p>
+                </div>
+                <div class="service-card">
+                    <div class="service-icon">📸</div>
+                    <h3>Photography & Video Editing</h3>
+                    <p>សេវាកម្មថតរូបភាពផលិតផល កម្មវិធី និងការកាត់តរូបភាព/វីដេអូ សម្រាប់ប្រពន្ធផ្សព្វផ្សាយពាណិជ្ជកម្ម ឬមាតិកាអាជីវកម្ម។</p>
+                </div>
+                <div class="service-card">
+                    <div class="service-icon">👨‍🏫</div>
+                    <h3>IT Training & Consulting</h3>
+                    <p>ផ្តល់ការប្រឹក្សាយោបល់លើការរៀបចំរចនាសម្ព័ន្ធ IT ក្នុងស្ថាប័ន និងបណ្តុះបណ្តាលការប្រកបការងារបច្ចេកវិទ្យាកុំព្យូទ័រជាមូលដ្ឋាន។</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Skills Section -->
+    <section class="skills-section id="skills">
+        <div class="container">
+            <div class="section-header">
+                <p class="section-subtitle">ជំនាញបច្ចេកទេស</p>
+                <h2 class="section-title">ជំនាញ និងសមត្ថភាពសំខាន់ៗ</h2>
+            </div>
+            <div class="skills-grid">
+                <div class="skill-group">
+                    <h3>🛠️ IT Technical & Infrastructure</h3>
+                    <div class="tags">
+                        <span class="tag">Software & Hardware Troubleshooting</span>
+                        <span class="tag">Network Configuration</span>
+                        <span class="tag">Mikrotik Router setup</span>
+                        <span class="tag">Ruijie & UniFi Systems</span>
+                        <span class="tag">Windows Environments</span>
+                        <span class="tag">CCTV Management</span>
+                        <span class="tag">Data Backup & Security</span>
+                        <span class="tag">Printer & Storage Sharing</span>
+                    </div>
+                </div>
+                <div class="skill-group">
+                    <h3>🎨 Creative & Multimedia</h3>
+                    <div class="tags">
+                        <span class="tag">Graphic Design</span>
+                        <span class="tag">Adobe Photoshop</span>
+                        <span class="tag">Microsoft Publisher</span>
+                        <span class="tag">Photography</span>
+                        <span class="tag">Photo Editing</span>
+                        <span class="tag">Video Editing</span>
+                        <span class="tag">Content Creation</span>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Experience Section -->
+    <section class="experience" id="experience">
+        <div class="container">
+            <div class="section-header">
+                <p class="section-subtitle">ប្រវត្តិនៃការងារ</p>
+                <h2 class="section-title">បទពិសោធន៍ធ្វើការងារ</h2>
+            </div>
+            <div class="timeline">
+                <div class="timeline-item">
+                    <div class="timeline-dot"></div>
+                    <div class="timeline-content">
+                        <div class="timeline-date">June 2025 – Present</div>
+                        <h3 class="timeline-title">Technician (Part-Time)</h3>
+                        <div class="timeline-company">Mars Technology & Computer</div>
+                        <ul class="timeline-details">
+                            <li>ផ្តល់សេវាកម្មជួសជុល ថែទាំ និងរៀបចំប្រព័ន្ធបច្ចេកវិទ្យាកុំព្យូទ័រជូនអតិថិជន។</li>
+                        </ul>
+                    </div>
+                </div>
+
+                <div class="timeline-item">
+                    <div class="timeline-dot"></div>
+                    <div class="timeline-content">
+                        <div class="timeline-date">January 2020 – Present</div>
+                        <h3 class="timeline-title">IT Support Specialist</h3>
+                        <div class="timeline-company">Elegant International School</div>
+                        <ul class="timeline-details">
+                            <li>ដំឡើង និងកំណត់រចនាសម្ព័ន្ធបណ្តាញ Mikrotik, Router, Wi-Fi, Switch, Ruijie, UniFi។</li>
+                            <li>គ្រប់គ្រង និងថែទាំប្រព័ន្ធ CCTV, Backups, និង Security Protocols។</li>
+                            <li>ដោះស្រាយបញ្ហា Hardware, Software, Desktop, Laptop, Printer និង Network resources។</li>
+                            <li>បង្រៀនថ្នាក់កុំព្យូទ័រ និងផ្តល់ការគាំទ្រផ្នែកបច្ចេកវិទ្យាជូនបុគ្គលិក។</li>
+                        </ul>
+                    </div>
+                </div>
+
+                <div class="timeline-item">
+                    <div class="timeline-dot"></div>
+                    <div class="timeline-content">
+                        <div class="timeline-date">2022 – 2023</div>
+                        <h3 class="timeline-title">Freelance Graphic Designer</h3>
+                        <div class="timeline-company">Elegant Clinic</div>
+                        <ul class="timeline-details">
+                            <li>រចនាសម្ភារៈផ្សព្វផ្សាយពាណិជ្ជកម្ម បដា និង Banner សម្រាប់ Social Media។</li>
+                        </ul>
+                    </div>
+                </div>
+
+                <div class="timeline-item">
+                    <div class="timeline-dot"></div>
+                    <div class="timeline-content">
+                        <div class="timeline-date">September 2019 – December 2019</div>
+                        <h3 class="timeline-title">IT Support</h3>
+                        <div class="timeline-company">Phnom Penh</div>
+                        <ul class="timeline-details">
+                            <li>ផ្តល់ការគាំទ្រផ្នែកបច្ចេកវិទ្យាកុំព្យូទ័រ និងដោះស្រាយបញ្ហាបណ្តាញទូទៅ។</li>
+                        </ul>
+                    </div>
+                </div>
+
+                <div class="timeline-item">
+                    <div class="timeline-dot"></div>
+                    <div class="timeline-content">
+                        <div class="timeline-date">May 2018 – September 2018</div>
+                        <h3 class="timeline-title">Administrative Work</h3>
+                        <div class="timeline-company">Ung Thoung Buddhist High School</div>
+                        <ul class="timeline-details">
+                            <li>រៀបចំឯកសារ និងការងាររដ្ឋបាលទូទៅក្នុងសាលា។</li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Contact CTA Section -->
+    <section class="contact" id="contact">
+        <div class="container">
+            <div class="contact-box">
+                <h2>តើអ្នកត្រូវការដំណោះស្រាយ IT ឬការរចនា Design?</h2>
+                <p>ខ្ញុំរីករាយក្នុងការសហការជាមួយអ្នកលើគម្រោង Freelance ទាំងផ្នែក IT Support Network និង Graphic Design។ ទាក់ទងមកខ្ញុំឥឡូវនេះដើម្បីពិភាក្សា!</p>
+                <div class="contact-buttons">
+                    <a href="https://t.me/Bunhean007" target="_blank" class="btn-hire">💬 ផ្ញើសារតាម Telegram</a>
+                    <a href="mailto:Thoeurnhean9@gmail.com" class="btn-secondary">✉️ ផ្ញើ Email មកខ្ញុំ</a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer>
+        <div class="container">
+            <p>&copy; 2026 Thoeurn Hean. All rights reserved. Designed for Professional Portfolio.</p>
+        </div>
+    </footer>
+
+</body>
+</html>
