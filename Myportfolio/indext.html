@@ -1,0 +1,967 @@
+<!DOCTYPE html>
+<html lang="km">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Thoeurn Hean - Portfolio | IT Specialist & Graphic Designer</title>
+    <!-- Google Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&family=Kantumruy+Pro:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <!-- FontAwesome Icons -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    
+    <style>
+        :root {
+            --primary: #2563eb;
+            --primary-hover: #1d4ed8;
+            --secondary: #0f172a;
+            --accent: #06b6d4;
+            --bg-dark: #090d16;
+            --card-bg: #111827;
+            --card-border: #1f2937;
+            --text-main: #f3f4f6;
+            --text-muted: #9ca3af;
+            --white: #ffffff;
+            --gradient: linear-gradient(135deg, #2563eb 0%, #06b6d4 100%);
+        }
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            scroll-behavior: smooth;
+        }
+
+        body {
+            font-family: 'Inter', 'Kantumruy Pro', sans-serif;
+            background-color: var(--bg-dark);
+            color: var(--text-main);
+            line-height: 1.6;
+            overflow-x: hidden;
+        }
+
+        /* Container */
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 20px;
+        }
+
+        /* Navigation */
+        nav {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            background: rgba(9, 13, 22, 0.85);
+            backdrop-filter: blur(12px);
+            border-bottom: 1px solid var(--card-border);
+            z-index: 1000;
+            padding: 18px 0;
+        }
+
+        .nav-container {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        .logo {
+            font-size: 1.5rem;
+            font-weight: 800;
+            color: var(--white);
+            text-decoration: none;
+            display: flex;
+            align-items: center;
+            gap: 8px;
+        }
+
+        .logo span {
+            background: var(--gradient);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+        }
+
+        .nav-links {
+            display: flex;
+            list-style: none;
+            gap: 28px;
+            align-items: center;
+        }
+
+        .nav-links a {
+            color: var(--text-muted);
+            text-decoration: none;
+            font-weight: 500;
+            font-size: 0.95rem;
+            transition: color 0.3s ease;
+        }
+
+        .nav-links a:hover {
+            color: var(--accent);
+        }
+
+        .btn-hire {
+            background: var(--gradient);
+            color: var(--white);
+            padding: 9px 22px;
+            border-radius: 50px;
+            font-weight: 600;
+            text-decoration: none;
+            transition: transform 0.2s, box-shadow 0.2s;
+        }
+
+        .btn-hire:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 6px 20px rgba(37, 99, 235, 0.4);
+        }
+
+        /* Hero Section */
+        #hero {
+            padding: 160px 0 100px;
+            position: relative;
+        }
+
+        .hero-content {
+            display: grid;
+            grid-template-columns: 1.2fr 0.8fr;
+            gap: 40px;
+            align-items: center;
+        }
+
+        .badge {
+            display: inline-flex;
+            align-items: center;
+            gap: 8px;
+            background: rgba(37, 99, 235, 0.1);
+            border: 1px solid rgba(37, 99, 235, 0.3);
+            color: var(--accent);
+            padding: 6px 16px;
+            border-radius: 30px;
+            font-size: 0.85rem;
+            font-weight: 600;
+            margin-bottom: 20px;
+        }
+
+        .badge i {
+            font-size: 0.75rem;
+            color: #10b981;
+        }
+
+        .hero-text h1 {
+            font-size: 3.2rem;
+            font-weight: 800;
+            line-height: 1.2;
+            margin-bottom: 16px;
+        }
+
+        .hero-text h1 span {
+            background: var(--gradient);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+        }
+
+        .hero-text h2 {
+            font-size: 1.35rem;
+            color: var(--text-muted);
+            font-weight: 400;
+            margin-bottom: 24px;
+        }
+
+        .hero-text p {
+            color: var(--text-muted);
+            font-size: 1.05rem;
+            margin-bottom: 32px;
+            max-width: 580px;
+        }
+
+        .hero-btns {
+            display: flex;
+            gap: 16px;
+            flex-wrap: wrap;
+        }
+
+        .btn-primary {
+            background: var(--gradient);
+            color: var(--white);
+            padding: 12px 28px;
+            border-radius: 8px;
+            font-weight: 600;
+            text-decoration: none;
+            display: inline-flex;
+            align-items: center;
+            gap: 10px;
+            transition: all 0.3s ease;
+        }
+
+        .btn-primary:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 8px 25px rgba(37, 99, 235, 0.4);
+        }
+
+        .btn-outline {
+            border: 1px solid var(--card-border);
+            background: var(--card-bg);
+            color: var(--text-main);
+            padding: 12px 28px;
+            border-radius: 8px;
+            font-weight: 600;
+            text-decoration: none;
+            display: inline-flex;
+            align-items: center;
+            gap: 10px;
+            transition: all 0.3s ease;
+        }
+
+        .btn-outline:hover {
+            border-color: var(--accent);
+            color: var(--accent);
+            transform: translateY(-2px);
+        }
+
+        .hero-card {
+            background: var(--card-bg);
+            border: 1px solid var(--card-border);
+            border-radius: 20px;
+            padding: 30px;
+            position: relative;
+            box-shadow: 0 20px 40px rgba(0,0,0,0.4);
+        }
+
+        .hero-avatar {
+            width: 120px;
+            height: 120px;
+            border-radius: 50%;
+            background: var(--gradient);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 3rem;
+            color: var(--white);
+            margin: 0 auto 0px;
+        }
+
+        .stat-grid {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 16px;
+            margin-top: 20px;
+        }
+
+        .stat-item {
+            background: rgba(255, 255, 255, 0.03);
+            border: 1px solid var(--card-border);
+            border-radius: 12px;
+            padding: 16px;
+            text-align: center;
+        }
+
+        .stat-item h3 {
+            font-size: 1.6rem;
+            color: var(--accent);
+            font-weight: 700;
+        }
+
+        .stat-item p {
+            font-size: 0.85rem;
+            color: var(--text-muted);
+            margin-top: 4px;
+        }
+
+        /* Section Global Styles */
+        section {
+            padding: 90px 0;
+            border-top: 1px solid rgba(255, 255, 255, 0.05);
+        }
+
+        .section-header {
+            text-align: center;
+            margin-bottom: 60px;
+        }
+
+        .section-header h2 {
+            font-size: 2.2rem;
+            font-weight: 700;
+            margin-bottom: 12px;
+        }
+
+        .section-header p {
+            color: var(--text-muted);
+            font-size: 1rem;
+            max-width: 600px;
+            margin: 0 auto;
+        }
+
+        /* Services Section */
+        .services-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
+            gap: 24px;
+        }
+
+        .service-card {
+            background: var(--card-bg);
+            border: 1px solid var(--card-border);
+            border-radius: 16px;
+            padding: 32px;
+            transition: all 0.3s ease;
+        }
+
+        .service-card:hover {
+            transform: translateY(-6px);
+            border-color: var(--primary);
+            box-shadow: 0 12px 30px rgba(37, 99, 235, 0.15);
+        }
+
+        .service-icon {
+            width: 56px;
+            height: 56px;
+            border-radius: 12px;
+            background: rgba(37, 99, 235, 0.1);
+            color: var(--accent);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 1.5rem;
+            margin-bottom: 20px;
+        }
+
+        .service-card h3 {
+            font-size: 1.25rem;
+            margin-bottom: 14px;
+            font-weight: 600;
+        }
+
+        .service-card ul {
+            list-style: none;
+        }
+
+        .service-card ul li {
+            color: var(--text-muted);
+            font-size: 0.92rem;
+            margin-bottom: 10px;
+            display: flex;
+            align-items: center;
+            gap: 10px;
+        }
+
+        .service-card ul li i {
+            color: var(--accent);
+            font-size: 0.8rem;
+        }
+
+        /* Skills Section */
+        .skills-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+            gap: 24px;
+        }
+
+        .skill-group {
+            background: var(--card-bg);
+            border: 1px solid var(--card-border);
+            border-radius: 16px;
+            padding: 28px;
+        }
+
+        .skill-group h3 {
+            font-size: 1.15rem;
+            margin-bottom: 20px;
+            display: flex;
+            align-items: center;
+            gap: 10px;
+            color: var(--accent);
+        }
+
+        .tags {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 10px;
+        }
+
+        .tag {
+            background: rgba(255, 255, 255, 0.05);
+            border: 1px solid var(--card-border);
+            color: var(--text-main);
+            padding: 7px 14px;
+            border-radius: 20px;
+            font-size: 0.85rem;
+            font-weight: 500;
+        }
+
+        /* Experience Timeline */
+        .timeline {
+            position: relative;
+            max-width: 800px;
+            margin: 0 auto;
+        }
+
+        .timeline::before {
+            content: '';
+            position: absolute;
+            left: 20px;
+            top: 0;
+            bottom: 0;
+            width: 2px;
+            background: var(--card-border);
+        }
+
+        .timeline-item {
+            position: relative;
+            padding-left: 60px;
+            margin-bottom: 40px;
+        }
+
+        .timeline-dot {
+            position: absolute;
+            left: 11px;
+            top: 4px;
+            width: 20px;
+            height: 20px;
+            border-radius: 50%;
+            background: var(--primary);
+            border: 4px solid var(--bg-dark);
+        }
+
+        .timeline-content {
+            background: var(--card-bg);
+            border: 1px solid var(--card-border);
+            border-radius: 14px;
+            padding: 24px;
+        }
+
+        .timeline-date {
+            font-size: 0.85rem;
+            color: var(--accent);
+            font-weight: 600;
+            margin-bottom: 6px;
+        }
+
+        .timeline-title {
+            font-size: 1.15rem;
+            font-weight: 600;
+            margin-bottom: 4px;
+        }
+
+        .timeline-company {
+            color: var(--text-muted);
+            font-size: 0.95rem;
+            margin-bottom: 14px;
+        }
+
+        .timeline-bullets {
+            list-style: none;
+        }
+
+        .timeline-bullets li {
+            color: var(--text-muted);
+            font-size: 0.9rem;
+            margin-bottom: 6px;
+            position: relative;
+            padding-left: 18px;
+        }
+
+        .timeline-bullets li::before {
+            content: '•';
+            color: var(--accent);
+            position: absolute;
+            left: 0;
+            font-weight: bold;
+        }
+
+        /* Portfolio Gallery */
+        .portfolio-tabs {
+            display: flex;
+            justify-content: center;
+            gap: 12px;
+            margin-bottom: 40px;
+        }
+
+        .tab-btn {
+            background: var(--card-bg);
+            border: 1px solid var(--card-border);
+            color: var(--text-muted);
+            padding: 10px 24px;
+            border-radius: 30px;
+            font-weight: 600;
+            cursor: pointer;
+            transition: all 0.3s ease;
+        }
+
+        .tab-btn.active, .tab-btn:hover {
+            background: var(--gradient);
+            color: var(--white);
+            border-color: transparent;
+        }
+
+        .portfolio-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+            gap: 24px;
+        }
+
+        .portfolio-card {
+            background: var(--card-bg);
+            border: 1px solid var(--card-border);
+            border-radius: 14px;
+            overflow: hidden;
+            transition: all 0.3s ease;
+        }
+
+        .portfolio-card:hover {
+            transform: translateY(-5px);
+            border-color: var(--primary);
+        }
+
+        .portfolio-img {
+            height: 180px;
+            background: #1e293b;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: var(--text-muted);
+            font-size: 2.5rem;
+        }
+
+        .portfolio-info {
+            padding: 20px;
+        }
+
+        .portfolio-info h4 {
+            font-size: 1.1rem;
+            margin-bottom: 8px;
+        }
+
+        .portfolio-info p {
+            color: var(--text-muted);
+            font-size: 0.88rem;
+        }
+
+        /* Contact Section */
+        .contact-grid {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 40px;
+        }
+
+        .contact-info-card {
+            background: var(--card-bg);
+            border: 1px solid var(--card-border);
+            border-radius: 16px;
+            padding: 32px;
+        }
+
+        .contact-item {
+            display: flex;
+            align-items: flex-start;
+            gap: 18px;
+            margin-bottom: 24px;
+        }
+
+        .contact-icon {
+            width: 46px;
+            height: 46px;
+            border-radius: 10px;
+            background: rgba(37, 99, 235, 0.1);
+            color: var(--accent);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 1.2rem;
+            flex-shrink: 0;
+        }
+
+        .contact-details h4 {
+            font-size: 0.95rem;
+            color: var(--text-muted);
+            margin-bottom: 4px;
+        }
+
+        .contact-details p, .contact-details a {
+            color: var(--text-main);
+            font-size: 1.05rem;
+            text-decoration: none;
+            font-weight: 500;
+        }
+
+        .contact-details a:hover {
+            color: var(--accent);
+        }
+
+        .social-links {
+            display: flex;
+            gap: 12px;
+            margin-top: 30px;
+        }
+
+        .social-btn {
+            width: 42px;
+            height: 42px;
+            border-radius: 50%;
+            background: rgba(255, 255, 255, 0.05);
+            border: 1px solid var(--card-border);
+            color: var(--text-main);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            text-decoration: none;
+            transition: all 0.3s ease;
+        }
+
+        .social-btn:hover {
+            background: var(--gradient);
+            border-color: transparent;
+            transform: translateY(-3px);
+        }
+
+        /* Footer */
+        footer {
+            border-top: 1px solid var(--card-border);
+            padding: 30px 0;
+            text-align: center;
+            color: var(--text-muted);
+            font-size: 0.9rem;
+        }
+
+        /* Responsive Design */
+        @media (max-width: 992px) {
+            .hero-content, .contact-grid {
+                grid-template-columns: 1fr;
+            }
+            .hero-text h1 {
+                font-size: 2.5rem;
+            }
+        }
+
+        @media (max-width: 768px) {
+            .nav-links {
+                display: none;
+            }
+            #hero {
+                padding-top: 120px;
+            }
+            .timeline::before {
+                left: 10px;
+            }
+            .timeline-item {
+                padding-left: 35px;
+            }
+            .timeline-dot {
+                left: 1px;
+            }
+        }
+    </style>
+</head>
+<body>
+
+    <!-- Header / Navbar -->
+    <nav>
+        <div class="container nav-container">
+            <a href="#" class="logo">
+                <i class="fa-solid fa-code"></i> Thoeurn <span>Hean</span>
+            </a>
+            <ul class="nav-links">
+                <li><a href="#hero">ទំព័រដើម</a></li>
+                <li><a href="#services">សេវាកម្ម</a></li>
+                <li><a href="#skills">ជំនាញ</a></li>
+                <li><a href="#experience">បទពិសោធន៍</a></li>
+                <li><a href="#portfolio">ស្នាដៃ</a></li>
+                <li><a href="#contact">ទំនាក់ទំនង</a></li>
+            </ul>
+            <a href="#contact" class="btn-hire"><i class="fa-solid fa-paper-plane"></i> Hire Me</a>
+        </div>
+    </nav>
+
+    <!-- Hero Section -->
+    <section id="hero">
+        <div class="container hero-content">
+            <div class="hero-text">
+                <div class="badge">
+                    <i class="fa-solid fa-circle"></i> ទទួលធ្វើការងារ Freelance & Projects
+                </div>
+                <h1>ជម្រាបសួរ! ខ្ញុំបាទ <span>ធឿន ហ៊ាន</span></h1>
+                <h2>Senior IT Support Specialist & Creative Graphic Designer</h2>
+                <p>
+                    ខ្ញុំផ្តល់ជូននូវសេវាកម្មបច្ចេកវិទ្យាព័ត៌មាន (IT Infrastructure, Network setup, CCTV) 
+                    បូករួមជាមួយការរចនាបែបគំនិតច្នៃប្រឌិត (Graphic Design, Photography & Video Editing) 
+                    ដើម្បីជួយឱ្យអាជីវកម្ម និងស្ថាប័នរបស់អ្នកដំណើរការយ៉ាងរលូន និងមានភាពទាក់ទាញខ្ពស់។
+                </p>
+                <div class="hero-btns">
+                    <a href="#portfolio" class="btn-primary"><i class="fa-solid fa-briefcase"></i> មើលស្នាដៃដែលធ្លាប់ធ្វើ</a>
+                    <a href="#contact" class="btn-outline"><i class="fa-solid fa-phone"></i> ទាក់ទងផ្ទាល់</a>
+                </div>
+            </div>
+            <div class="hero-card">
+                <div class="hero-avatar">
+                    <img src="images/bunhean.jpg" alt="Avatar" class="hero-avatar">
+                </div>
+                <h3 style="text-align: center; margin-bottom: 6px;">Thoeurn Hean</h3>
+                <p style="text-align: center; color: var(--text-muted); font-size: 0.9rem;">Poipet City, Cambodia</p>
+                
+                <div class="stat-grid">
+                    <div class="stat-item">
+                        <h3>6+ ឆ្នាំ</h3>
+                        <p>បទពិសោធន៍ IT Support</p>
+                    </div>
+                    <div class="stat-item">
+                        <h3>3+ ឆ្នាំ</h3>
+                        <p>Graphic Freelance</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Services Section -->
+    <section id="services">
+        <div class="container">
+            <div class="section-header">
+                <h2>សេវាកម្ម Freelance ខ្ញុំផ្តល់ជូន</h2>
+                <p>សេវាកម្មដែលមានគុណភាពខ្ពស់ ឆ្លើយតបត្រូវតាមតម្រូវការអាជីវកម្ម និងស្ថាប័ន</p>
+            </div>
+            <div class="services-grid">
+                <!-- Service 1 -->
+                <div class="service-card">
+                    <div class="service-icon">
+                        <i class="fa-solid fa-palette"></i>
+                    </div>
+                    <h3>Graphic Design & Media</h3>
+                    <ul>
+                        <li><i class="fa-solid fa-check"></i> Poster / Banner សម្រាប់ Social Media</li>
+                        <li><i class="fa-solid fa-check"></i> Design សម្ភារៈផ្សព្វផ្សាយ ពាណិជ្ជកម្ម</li>
+                        <li><i class="fa-solid fa-check"></i> ការថតរូប និងកាត់តរូបភាព (Retouching)</li>
+                        <li><i class="fa-solid fa-check"></i> កាត់តវីដេអូខ្លីសម្រាប់ Ads / Promotions</li>
+                    </ul>
+                </div>
+                <!-- Service 2 -->
+                <div class="service-card">
+                    <div class="service-icon">
+                        <i class="fa-solid fa-network-wired"></i>
+                    </div>
+                    <h3>Network Installation & Config</h3>
+                    <ul>
+                        <li><i class="fa-solid fa-check"></i> Setup Mikrotik, Ruijie, & UniFi</li>
+                        <li><i class="fa-solid fa-check"></i> កំណត់រចនាសម្ព័ន្ធ Router, Switch & Wi-Fi</li>
+                        <li><i class="fa-solid fa-check"></i> ដោះស្រាយបញ្ហាបណ្តាញ Network ដាច់/យឺត</li>
+                        <li><i class="fa-solid fa-check"></i> រៀបចំបណ្តាញប្រព័ន្ធ Network ខ្សែ និង Wi-Fi</li>
+                    </ul>
+                </div>
+                <!-- Service 3 -->
+                <div class="service-card">
+                    <div class="service-icon">
+                        <i class="fa-solid fa-wrench"></i>
+                    </div>
+                    <h3>IT Support & Maintenance</h3>
+                    <ul>
+                        <li><i class="fa-solid fa-check"></i> ជួសជុល និងថែទាំ Computer Hardware/Software</li>
+                        <li><i class="fa-solid fa-check"></i> ដំឡើង និងគ្រប់គ្រងប្រព័ន្ធ CCTV Security</li>
+                        <li><i class="fa-solid fa-check"></i> រៀបចំប្រព័ន្ធ Backup និងសុវត្ថិភាពទិន្នន័យ</li>
+                        <li><i class="fa-solid fa-check"></i> ផ្តល់ការគាំទ្រផ្នែកបច្ចេកវិទ្យា (On-site & Remote)</li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Skills Section -->
+    <section id="skills">
+        <div class="container">
+            <div class="section-header">
+                <h2>ជំនាញ និងបច្ចេកវិទ្យា (Skills & Tools)</h2>
+                <p>ឧបករណ៍ និងបច្ចេកវិទ្យាដែលខ្ញុំប្រើប្រាស់ជាប្រចាំ</p>
+            </div>
+            <div class="skills-grid">
+                <div class="skill-group">
+                    <h3><i class="fa-solid fa-server"></i> Networking & Infrastructure</h3>
+                    <div class="tags">
+                        <span class="tag">Mikrotik</span>
+                        <span class="tag">Ruijie / Reyee</span>
+                        <span class="tag">Ubiquiti UniFi</span>
+                        <span class="tag">Network Switches</span>
+                        <span class="tag">Router Config</span>
+                        <span class="tag">Troubleshooting</span>
+                    </div>
+                </div>
+                <div class="skill-group">
+                    <h3><i class="fa-solid fa-desktop"></i> IT Systems & Hardware</h3>
+                    <div class="tags">
+                        <span class="tag">Windows Environments</span>
+                        <span class="tag">CCTV Installation</span>
+                        <span class="tag">Data Backup</span>
+                        <span class="tag">Printer / Scanner Setup</span>
+                        <span class="tag">Hardware Repair</span>
+                    </div>
+                </div>
+                <div class="skill-group">
+                    <h3><i class="fa-solid fa-pen-nib"></i> Design & Video Editing</h3>
+                    <div class="tags">
+                        <span class="tag">Adobe Photoshop</span>
+                        <span class="tag">Publisher</span>
+                        <span class="tag">Photography</span>
+                        <span class="tag">Video Editing</span>
+                        <span class="tag">Social Media Design</span>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Experience Timeline -->
+    <section id="experience">
+        <div class="container">
+            <div class="section-header">
+                <h2>បទពិសោធន៍ធ្វើការងារ (Work Experience)</h2>
+                <p>ប្រវត្តិការងារកន្លងមកក្នុងវិស័យ IT Support, Network និង Design</p>
+            </div>
+            <div class="timeline">
+		 <!-- Exp 1 -->
+                <div class="timeline-item">
+                    <div class="timeline-dot"></div>
+                    <div class="timeline-content">
+                        <div class="timeline-date">2025 - បច្ចុប្បន្ន</div>
+                        <div class="timeline-title">IT Technician</div>
+                        <div class="timeline-company">Mars Technology & Computer</div>
+                        <ul class="timeline-bullets">
+                            <li>រៀបចំ និងដំឡើងប្រព័ន្ធ Network ឧបករណ៍ Mikrotik, Ruijie, UniFi, Router & Switch។</li>
+                            <li>គ្រប់គ្រង និងថែទាំប្រព័ន្ធសុវត្ថិភាព CCTV, System Backup, និង Data Protection។</li>
+                            <li>ផ្តល់ដំណោះស្រាយបច្ចេកវិទ្យាភ្លាមៗជូនបុគ្គលិកលើ Laptop, Desktop, Printer, Scanner។</li>
+                        </ul>
+                    </div>
+                </div>
+                <!-- Exp 1 -->
+                <div class="timeline-item">
+                    <div class="timeline-dot"></div>
+                    <div class="timeline-content">
+                        <div class="timeline-date">2020 - បច្ចុប្បន្ន</div>
+                        <div class="timeline-title">IT Support Specialist</div>
+                        <div class="timeline-company">Elegant International School</div>
+                        <ul class="timeline-bullets">
+                            <li>រៀបចំ និងដំឡើងប្រព័ន្ធ Network ឧបករណ៍ Mikrotik, Ruijie, Tp-Link, UniFi, Router & Switch។</li>
+                            <li>គ្រប់គ្រង និងថែទាំប្រព័ន្ធសុវត្ថិភាព CCTV, System Backup, និង Data Protection។</li>
+                            <li>ផ្តល់ដំណោះស្រាយបច្ចេកវិទ្យាភ្លាមៗជូនបុគ្គលិកលើ Laptop, Desktop, Printer, Scanner។</li>
+                            <li>គ្រប់គ្រងការរចនា Graphic Poster, ថតរូប និងកាត់តវីដេអូកម្មវិធីផ្សេងៗរបស់សាលា។</li>
+                        </ul>
+                    </div>
+                </div>
+                <!-- Exp 2 -->
+                <div class="timeline-item">
+                    <div class="timeline-dot"></div>
+                    <div class="timeline-content">
+                        <div class="timeline-date">2022 - 2023</div>
+                        <div class="timeline-title">Freelance Graphic Designer</div>
+                        <div class="timeline-company">Elegant Clinic</div>
+                        <ul class="timeline-bullets">
+                            <li>រចនា Poster និង Banner ពាណិជ្ជកម្មសម្រាប់ផុសលើបណ្តាញសង្គម។</li>
+                            <li>កែច្នៃរូបភាពសេវាកម្មសុខភាព និងសម្រស់ឱ្យមានភាពទាក់ទាញ និងស្តង់ដារ។</li>
+                        </ul>
+                    </div>
+                </div>
+                <!-- Exp 3 -->
+                <div class="timeline-item">
+                    <div class="timeline-dot"></div>
+                    <div class="timeline-content">
+                        <div class="timeline-date">2019 (កញ្ញា - ធ្នូ)</div>
+                        <div class="timeline-title">IT Support Specialist</div>
+                        <div class="timeline-company">Phnom Penh</div>
+                        <ul class="timeline-bullets">
+                            <li>ដោះស្រាយបញ្ហា Hardware, Software និងការតភ្ជាប់ LAN Setup ជូនអតិថិជន។</li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Portfolio Gallery -->
+    <section id="portfolio">
+        <div class="container">
+            <div class="section-header">
+                <h2>ស្នាដៃធ្លាប់សម្រេចបាន (Featured Projects)</h2>
+                <p>គំរូការងារ Graphic Design និងប្រព័ន្ធ IT/Networking</p>
+            </div>
+            <div class="portfolio-grid">
+                <div class="portfolio-card">
+                    <div class="portfolio-img"><img src="images/post2.jpg" alt="loading" width="800" height="180"></div>
+                    <div class="portfolio-info">
+                        <h4>Social Media Design</h4>
+                        <p>ការងាររចនា Poster ផ្សព្វផ្សាយពាណិជ្ជកម្មឱ្យ Elegant Clinic និង Elegant International School</p>
+                    </div>
+                </div>
+                <div class="portfolio-card">
+                    <div class="portfolio-img"><img src="images/post5.png" alt="loading" width="800" height="180"></div>
+                    <div class="portfolio-info">
+                        <h4>Network Infrastructure Setup</h4>
+                        <p>ការដំឡើងប្រព័ន្ធ Wi-Fi, Mikrotik Router, Ruijie Switches សម្រាប់អាជីវកម្ម និងសាលារៀន</p>
+                    </div>
+                </div>
+                <div class="portfolio-card">
+                    <div class="portfolio-img"><img src="images/post6.jpg" alt="loading" width="800" height="180"></div>
+                    <div class="portfolio-info">
+                        <h4>CCTV Security System</h4>
+                        <p>ការរៀបចំដំឡើងកាមេរ៉ាសុវត្ថិភាព CCTV និងការកំណត់ System Remote Viewing</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Contact Section -->
+    <section id="contact">
+        <div class="container">
+            <div class="section-header">
+                <h2>ទំនាក់ទំនងមកខ្ញុំ (Get In Touch)</h2>
+                <p>លោកអ្នកអាចទាក់ទងមកខ្ញុំបាទសម្រាប់គម្រោងការងារ Freelance ឬពិគ្រោះយោបល់ដោយឥតគិតថ្លៃ</p>
+            </div>
+            <div class="contact-grid">
+                <div class="contact-info-card">
+                    <div class="contact-item">
+                        <div class="contact-icon"><i class="fa-solid fa-location-dot"></i></div>
+                        <div class="contact-details">
+                            <h4>អាសយដ្ឋាន</h4>
+                            <p>ភូមិគីឡូម៉ែត្រលេខ៤ សង្កាត់ផ្សារកណ្តាល ក្រុងប៉ោយប៉ែត ខេត្តបន្ទាយមានជ័យ</p>
+                        </div>
+                    </div>
+                    <div class="contact-item">
+                        <div class="contact-icon"><i class="fa-solid fa-phone"></i></div>
+                        <div class="contact-details">
+                            <h4>លេខទូរស័ព្ទ</h4>
+                            <a href="tel:+85586458599">+855 (0)86 458 599</a>
+                        </div>
+                    </div>
+                    <div class="contact-item">
+                        <div class="contact-icon"><i class="fa-solid fa-envelope"></i></div>
+                        <div class="contact-details">
+                            <h4>អ៊ីមែល</h4>
+                            <a href="mailto:Thoeurnhean9@gmail.com">Thoeurnhean9@gmail.com</a>
+                        </div>
+                    </div>
+                    <div class="social-links">
+                        <a href="https://t.me/Bunhean007" target="_blank" class="social-btn"><i class="fa-solid fa-paper-plane"></i></a>
+                        <a href="mailto:Thoeurnhean9@gmail.com" class="social-btn"><i class="fa-solid fa-envelope"></i></a>
+                        <a href="tel:+85586458599" class="social-btn"><i class="fa-solid fa-phone"></i></a>
+                    </div>
+                </div>
+
+                <div class="contact-info-card">
+                    <h3 style="margin-bottom: 20px;"><i class="fa-solid fa-graduation-cap" style="color: var(--accent);"></i> ការសិក្សា & វិញ្ញាបនបត្រ</h3>
+                    <ul class="timeline-bullets">
+                        <li style="margin-bottom: 12px;"><strong>បរិញ្ញាបត្របច្ចេកវិទ្យាព័ត៌មាន (IT):</strong> វិទ្យាស្ថានពហុបច្ចេកទេសភូមិភាគតេជោសែនបាត់ដំបង (2015-2019)</li>
+                        <li style="margin-bottom: 12px;"><strong>វិញ្ញាបនបត្រ Computer Repair:</strong> (2018)</li>
+                        <li style="margin-bottom: 12px;"><strong>វិញ្ញាបនបត្រ Publisher & Photoshop CS5:</strong> (2014)</li>
+                        <li style="margin-bottom: 12px;"><strong>Microsoft Word, Excel, PowerPoint:</strong> (2012)</li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer>
+        <div class="container">
+            <p>&copy; 2026 Thoeurn Hean. All rights reserved. Designed for professional showcase.</p>
+        </div>
+    </footer>
+
+</body>
+</html>
